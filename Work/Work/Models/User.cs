@@ -13,8 +13,11 @@ namespace Work.Models
         public string Telephone { get; set; }
         public string Email { get; set; }
         public string AboutMe { get; set; }
-        public string Skills { get; set; }
         public bool IsSportsman { get; set; }
+        public SportLevel Sportlevel { get; set; }
+        public int SportLevelId { get; set; }
+        public List<SkillUsers> SkillsUsers { get; set; }
         public List<EventUser> Events { get; set; }
+
     }
 }
