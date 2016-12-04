@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 
 namespace Work.Models
@@ -15,5 +16,9 @@ namespace Work.Models
         public string AboutMe { get; set; }
         public bool IsSportsman { get; set; }
         public List<EventUser> Events { get; set; }
+
+        public string Login { get; set; }
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }

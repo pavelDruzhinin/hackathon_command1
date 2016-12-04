@@ -25,6 +25,21 @@
                     <li>@Html.ActionLink("Пользователи", "Index", "Users")</li>
                     <li>@Html.ActionLink("Мероприятия", "Index", "Events")</li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                        {
+                            @Html.AntiForgeryToken()
+                        }
+                        <li>
+                            <a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Вход", "Login", "Account")</li>
+                    }
             </div>
         </div>
     </div>
