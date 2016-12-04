@@ -24,6 +24,10 @@
                     <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
                     <li>@Html.ActionLink("Пользователи", "Index", "Users")</li>
                     <li>@Html.ActionLink("Мероприятия", "Index", "Events")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Профиль", "Edit", "Users")</li>
+                    }
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
@@ -39,6 +43,7 @@
                     else
                     {
                         <li>@Html.ActionLink("Вход", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Регистрация", "Create", "Users")</li>
                     }
             </div>
         </div>
@@ -53,6 +58,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/jquery.unobtusive-ajax.min.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>
