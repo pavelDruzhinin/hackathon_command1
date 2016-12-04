@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Work.DataAccess;
 using Work.Models;
 
@@ -16,12 +17,15 @@ namespace Work.Controllers
         private DBContext db = new DBContext();
 
         // GET: Users
+        [Authorize]
         public ActionResult Index()
         {
+            
             return View(db.Users.ToList());
         }
 
         // GET: Users/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -47,7 +51,7 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Surname,Gender,Birthday,Telephone,Email,AboutMe,IsSportsman,Login,Password")] User user)
+        public ActionResult Create( User user)
         {
             if (ModelState.IsValid)
             {
@@ -60,12 +64,15 @@ namespace Work.Controllers
         }
 
         // GET: Users/Edit/5
+        //[Authorize]
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             User user = db.Users.Find(id);
             if (user == null)
             {
@@ -73,6 +80,24 @@ namespace Work.Controllers
             }
             return View(user);
         }
+        
+        public ActionResult EditProfile()
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            User user = db.Users.FirstOrDefault(x => x.Login == User.Identity.Name);
+           
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return RedirectToAction($"Edit/{user.Id}");
+            
+        }
+
 
         // POST: Users/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 

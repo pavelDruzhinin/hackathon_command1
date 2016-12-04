@@ -26,7 +26,7 @@
                     <li>@Html.ActionLink("Мероприятия", "Index", "Events")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Профиль", "Edit", "Users")</li>
+                        <li>@Html.ActionLink("Профиль", "EditProfile", "Users")</li>
                     }
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

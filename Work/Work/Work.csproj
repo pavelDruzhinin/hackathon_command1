@@ -183,6 +183,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612040948101_InitialCreate.cs" />
+    <Compile Include="Migrations\201612040948101_InitialCreate.Designer.cs">
+      <DependentUpon>201612040948101_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612041332519_Date1.cs" />
+    <Compile Include="Migrations\201612041332519_Date1.Designer.cs">
+      <DependentUpon>201612041332519_Date1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612041339137_Date2.cs" />
+    <Compile Include="Migrations\201612041339137_Date2.Designer.cs">
+      <DependentUpon>201612041339137_Date2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\User.cs" />
@@ -267,6 +280,17 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612040948101_InitialCreate.resx">
+      <DependentUpon>201612040948101_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612041332519_Date1.resx">
+      <DependentUpon>201612041332519_Date1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612041339137_Date2.resx">
+      <DependentUpon>201612041339137_Date2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

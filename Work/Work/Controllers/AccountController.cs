@@ -42,5 +42,18 @@ namespace Work.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult Edit(LoginViewModel model)
+        {
+            if (_accountService.Login(model.Login, model.Password))
+            {
+                FormsAuthentication.GetAuthCookie(model.Login, true);
+                return RedirectToAction("Edit", "Users");
+            }
+            ModelState.AddModelError("", "Что-то не так!");
+            return View(model);
+        }
+
+
     }
 }
