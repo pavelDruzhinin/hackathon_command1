@@ -195,6 +195,14 @@
     <Compile Include="Migrations\201612041339137_Date2.Designer.cs">
       <DependentUpon>201612041339137_Date2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612052033133_date3.cs" />
+    <Compile Include="Migrations\201612052033133_date3.Designer.cs">
+      <DependentUpon>201612052033133_date3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612052040407_date4.cs" />
+    <Compile Include="Migrations\201612052040407_date4.Designer.cs">
+      <DependentUpon>201612052040407_date4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
@@ -290,6 +298,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612041339137_Date2.resx">
       <DependentUpon>201612041339137_Date2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612052033133_date3.resx">
+      <DependentUpon>201612052033133_date3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612052040407_date4.resx">
+      <DependentUpon>201612052040407_date4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
