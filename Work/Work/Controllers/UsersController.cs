@@ -15,12 +15,37 @@ namespace Work.Controllers
     public class UsersController : Controller
     {
         private DBContext db = new DBContext();
+        private string searchString;
 
         // GET: Users
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "Date desc" : "Date";
+            var users = from s in db.Users
+                           select s;
             
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                users = users.Where(u => u.Name.ToUpper().Contains(searchString.ToUpper())
+                                       || u.Surname.ToUpper().Contains(searchString.ToUpper()));
+            }
+            switch (sortOrder)
+            {
+                case "Name desc":
+                    users = users.OrderByDescending(u => u.Name);
+                    break;
+                case "Date":
+                    users = users.OrderBy(u => u.Birthday);
+                    break;
+                case "Date desc":
+                    users = users.OrderByDescending(u => u.Birthday);
+                    break;
+                default:
+                    users = users.OrderBy(u => u.Name);
+                    break;
+            }
             return View(db.Users.ToList());
         }
 
