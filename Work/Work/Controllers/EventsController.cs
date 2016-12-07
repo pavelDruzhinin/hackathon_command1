@@ -14,10 +14,35 @@ namespace Work.Controllers
     public class EventsController : Controller
     {
         private DBContext db = new DBContext();
+        private string searchString;
 
         // GET: Events
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "Date desc" : "Date";
+            var events = from s in db.Events
+                           select s;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                events = events.Where(e => e.Name.ToUpper().Contains(searchString.ToUpper())
+                                       || e.Location.ToUpper().Contains(searchString.ToUpper()));
+            }
+            switch (sortOrder)
+            {
+                case "Name desc":
+                    events = events.OrderByDescending(e => e.Name);
+                    break;
+                case "Date":
+                    events = events.OrderBy(e => e.DateStart);
+                    break;
+                case "Date desc":
+                    events = events.OrderByDescending(e => e.DateStart);
+                    break;
+                default:
+                    events = events.OrderBy(e => e.Name);
+                    break;
+            }
             return View(db.Events.ToList());
         }
 

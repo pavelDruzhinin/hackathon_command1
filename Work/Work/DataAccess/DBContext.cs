@@ -14,11 +14,12 @@ namespace Work.DataAccess
                 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new EventMap());
-            modelBuilder.Configurations.Add(new EventUserMap());
-            modelBuilder.Configurations.Add(new UserMap());
+             modelBuilder.Configurations.Add(new EventMap());
+             modelBuilder.Configurations.Add(new EventUserMap());
+             modelBuilder.Configurations.Add(new UserMap());
             
-            base.OnModelCreating(modelBuilder);
-        }
+             base.OnModelCreating(modelBuilder);
+        
+         }
     }
 }

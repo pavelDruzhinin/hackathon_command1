@@ -114,6 +114,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -167,6 +171,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\EventUsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -178,10 +183,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612040948101_InitialCreate.cs" />
+    <Compile Include="Migrations\201612040948101_InitialCreate.Designer.cs">
+      <DependentUpon>201612040948101_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612041332519_Date1.cs" />
+    <Compile Include="Migrations\201612041332519_Date1.Designer.cs">
+      <DependentUpon>201612041332519_Date1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612041339137_Date2.cs" />
+    <Compile Include="Migrations\201612041339137_Date2.Designer.cs">
+      <DependentUpon>201612041339137_Date2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612052033133_date3.cs" />
+    <Compile Include="Migrations\201612052033133_date3.Designer.cs">
+      <DependentUpon>201612052033133_date3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612052040407_date4.cs" />
+    <Compile Include="Migrations\201612052040407_date4.Designer.cs">
+      <DependentUpon>201612052040407_date4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\EventUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AccountService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -249,6 +277,7 @@
     <Content Include="Views\EventUsers\Details.cshtml" />
     <Content Include="Views\EventUsers\Edit.cshtml" />
     <Content Include="Views\EventUsers\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -259,6 +288,23 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612040948101_InitialCreate.resx">
+      <DependentUpon>201612040948101_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612041332519_Date1.resx">
+      <DependentUpon>201612041332519_Date1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612041339137_Date2.resx">
+      <DependentUpon>201612041339137_Date2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612052033133_date3.resx">
+      <DependentUpon>201612052033133_date3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612052040407_date4.resx">
+      <DependentUpon>201612052040407_date4.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

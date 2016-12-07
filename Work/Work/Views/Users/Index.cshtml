@@ -5,15 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Люди</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Поиск по имени: @Html.TextBox("SearchString") &nbsp;
+        <input type="submit" value="Search" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Surname)
@@ -22,7 +29,7 @@
             @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Birthday)
+            @Html.ActionLink("Birthday", "Index", new { sortOrder = ViewBag.DateSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Telephone)
@@ -38,6 +45,8 @@
         </th>
         <th></th>
     </tr>
+
+   
 
 @foreach (var item in Model) {
     <tr>
