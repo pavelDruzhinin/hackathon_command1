@@ -14,7 +14,7 @@ namespace Work.Controllers
     public class EventsController : Controller
     {
         private DBContext db = new DBContext();
-        
+        private string searchString;
 
         // GET: Events
         public ActionResult Index(string sortOrder)

@@ -129,15 +129,15 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Surname,Gender,Birthday,Telephone,Email,AboutMe,IsSportsman,Login,Password")] User user)
+        public ActionResult Edit([Bind(Include = "Id,Name,Surname,Gender,Birthday,Telephone,Email,AboutMe,IsSportsman,Login,Password")] User @user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
+                db.Entry(@user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(user);
+            return View(@user);
         }
 
         // GET: Users/Delete/5
