@@ -129,7 +129,7 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Surname,Gender,Birthday,Telephone,Email,AboutMe,IsSportsman,Login,Password")] User @user)
+        public ActionResult Edit( User @user)
         {
             if (ModelState.IsValid)
             {

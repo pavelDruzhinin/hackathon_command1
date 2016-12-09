@@ -183,25 +183,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612040948101_InitialCreate.cs" />
-    <Compile Include="Migrations\201612040948101_InitialCreate.Designer.cs">
-      <DependentUpon>201612040948101_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201612091401239_Users.cs" />
+    <Compile Include="Migrations\201612091401239_Users.Designer.cs">
+      <DependentUpon>201612091401239_Users.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612041332519_Date1.cs" />
-    <Compile Include="Migrations\201612041332519_Date1.Designer.cs">
-      <DependentUpon>201612041332519_Date1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612041339137_Date2.cs" />
-    <Compile Include="Migrations\201612041339137_Date2.Designer.cs">
-      <DependentUpon>201612041339137_Date2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612052033133_date3.cs" />
-    <Compile Include="Migrations\201612052033133_date3.Designer.cs">
-      <DependentUpon>201612052033133_date3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612052040407_date4.cs" />
-    <Compile Include="Migrations\201612052040407_date4.Designer.cs">
-      <DependentUpon>201612052040407_date4.cs</DependentUpon>
+    <Compile Include="Migrations\201612092024594_Users1.cs" />
+    <Compile Include="Migrations\201612092024594_Users1.Designer.cs">
+      <DependentUpon>201612092024594_Users1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Event.cs" />
@@ -290,20 +278,11 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612040948101_InitialCreate.resx">
-      <DependentUpon>201612040948101_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612091401239_Users.resx">
+      <DependentUpon>201612091401239_Users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612041332519_Date1.resx">
-      <DependentUpon>201612041332519_Date1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612041339137_Date2.resx">
-      <DependentUpon>201612041339137_Date2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612052033133_date3.resx">
-      <DependentUpon>201612052033133_date3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612052040407_date4.resx">
-      <DependentUpon>201612052040407_date4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612092024594_Users1.resx">
+      <DependentUpon>201612092024594_Users1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

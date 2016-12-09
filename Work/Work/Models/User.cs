@@ -12,7 +12,10 @@ namespace Work.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Gender { get; set; }
-        public DateTime? Birthday { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Дата рождения")]
+        public DateTime Birthday { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
         public string AboutMe { get; set; }
