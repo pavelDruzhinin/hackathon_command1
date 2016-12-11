@@ -26,5 +26,10 @@ namespace Work.Models
         [DataType(DataType.Password)]
         [Required]
         public string Password { get; set; }
+
+        // Роль пользователя
+        public int RoleId { get; set; }
+        public Role Role { get; set; }
+
     }
 }

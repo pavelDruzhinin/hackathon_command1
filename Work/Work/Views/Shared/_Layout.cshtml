@@ -22,7 +22,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Пользователи", "Index", "Users")</li>
+                    <li>@{
+                        if (User.IsInRole("admin"))
+                        {
+                            Html.ActionLink("Пользователи", "Index", "Users");
+
+                        }}</li>
                     <li>@Html.ActionLink("Мероприятия", "Index", "Events")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -32,12 +37,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
                     {
+                       
                         using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm" }))
                         {
                             @Html.AntiForgeryToken()
                         }
                         <li>
-                            <a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a>
+                            <a href="javascript:document.getElementById('logoutForm').submit()"><span style="padding-right:25px;color:darkgoldenrod">@User.Identity.Name.ToString()</span>Выйти</a>
                         </li>
                     }
                     else

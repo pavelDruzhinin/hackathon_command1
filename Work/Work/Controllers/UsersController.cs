@@ -18,7 +18,7 @@ namespace Work.Controllers
         private string searchString;
 
         // GET: Users
-        [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult Index(string sortOrder)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name desc" : "";
@@ -76,21 +76,24 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( User user)
+        public ActionResult Create([Bind(Exclude ="RoleId")] User user)
         {
+            
+            
             if (ModelState.IsValid)
             {
+                Role user_role = db.Roles.FirstOrDefault(x => x.Name == "user");
+                user.RoleId = user_role.Id;
                 db.Users.Add(user);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home"); ;
             }
 
             return View(user);
         }
 
         // GET: Users/Edit/5
-        //[Authorize]
-
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)

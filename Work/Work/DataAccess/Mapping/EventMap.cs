@@ -8,7 +8,7 @@ namespace Work.DataAccess.Mapping
         public EventMap()
         {
             ToTable("Events"); // название таблицы в базе
-            HasMany(x => x.Users); // один ко многим
+            HasMany(x => x.EventUsers); // один ко многим
             HasKey(x => x.Id); // первичный ключ
         }
     }

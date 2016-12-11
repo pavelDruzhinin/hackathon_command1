@@ -11,13 +11,15 @@ namespace Work.DataAccess
                 public DbSet<Event> Events { get; set; }
                 public DbSet<EventUser> EventsUsers { get; set; }
                 public DbSet<User> Users { get; set; }
+                public DbSet<Role> Roles { get; set; }
+
                 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
              modelBuilder.Configurations.Add(new EventMap());
              modelBuilder.Configurations.Add(new EventUserMap());
              modelBuilder.Configurations.Add(new UserMap());
-            
+             modelBuilder.Configurations.Add(new RoleMap());
              base.OnModelCreating(modelBuilder);
         
          }

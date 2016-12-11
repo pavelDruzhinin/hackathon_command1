@@ -8,7 +8,7 @@ namespace Work.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Category { get; set; } //Категория сложности. можно просто выпадающий список в представлении (там 6 категорий всего)
-        public List<EventUser> Users { get; set; }
+        public List<EventUser> EventUsers { get; set; }
         public DateTime? DateStart { get; set; }
         public DateTime? DateFinish { get; set; }
         public string Location { get; set; } //место проведения
