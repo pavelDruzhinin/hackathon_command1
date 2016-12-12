@@ -18,7 +18,8 @@ namespace Work.Controllers
         private string searchString;
 
         // GET: Users
-        [Authorize(Roles = "admin")]
+        // [Authorize(Roles = "admin")]
+        [Authorize]
         public ActionResult Index(string sortOrder)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name desc" : "";
@@ -51,6 +52,7 @@ namespace Work.Controllers
 
         // GET: Users/Details/5
         [Authorize]
+        //[Authorize(Roles = "admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -66,6 +68,7 @@ namespace Work.Controllers
         }
 
         // GET: Users/Create
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
@@ -76,6 +79,7 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult Create([Bind(Exclude ="RoleId")] User user)
         {
             
@@ -93,7 +97,7 @@ namespace Work.Controllers
         }
 
         // GET: Users/Edit/5
-        
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -132,6 +136,7 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult Edit( User @user)
         {
             if (ModelState.IsValid)
@@ -144,6 +149,7 @@ namespace Work.Controllers
         }
 
         // GET: Users/Delete/5
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -161,6 +167,7 @@ namespace Work.Controllers
         // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             User user = db.Users.Find(id);
