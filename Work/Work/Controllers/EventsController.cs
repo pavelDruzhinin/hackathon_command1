@@ -17,6 +17,8 @@ namespace Work.Controllers
         private string searchString;
 
         // GET: Events
+        [Authorize]
+        //[Authorize(Roles = "admin")]
         public ActionResult Index(string sortOrder)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name desc" : "";
@@ -47,6 +49,8 @@ namespace Work.Controllers
         }
 
         // GET: Events/Details/5
+        [Authorize]
+        //[Authorize(Roles = "admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -62,6 +66,8 @@ namespace Work.Controllers
         }
 
         // GET: Events/Create
+        [Authorize]
+       // [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
@@ -72,6 +78,8 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+        //[Authorize(Roles = "admin")]
         public ActionResult Create([Bind(Include = "Id,Name,Category,DateStart,DateFinish,Location,CountUsers")] Event @event)
         {
             if (ModelState.IsValid)
@@ -85,6 +93,8 @@ namespace Work.Controllers
         }
 
         // GET: Events/Edit/5
+        //[Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -104,6 +114,8 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        // [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult Edit([Bind(Include = "Id,Name,Category,DateStart,DateFinish,Location,CountUsers")] Event @event)
         {
             if (ModelState.IsValid)
@@ -116,6 +128,8 @@ namespace Work.Controllers
         }
 
         // GET: Events/Delete/5
+        // [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -133,6 +147,8 @@ namespace Work.Controllers
         // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        // [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Event @event = db.Events.Find(id);
