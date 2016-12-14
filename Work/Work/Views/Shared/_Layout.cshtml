@@ -23,11 +23,12 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
                     <li>@{
-                        if (User.IsInRole("admin"))
-                        {
-                            Html.ActionLink("Пользователи", "Index", "Users");
 
-                        }}</li>
+
+                            if (User.Identity.IsAuthenticated) {
+                            @Html.ActionLink("Пользователи", "Index", "Users");
+                        }
+                    }</li>
                     <li>@Html.ActionLink("Мероприятия", "Index", "Events")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
