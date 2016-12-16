@@ -48,7 +48,7 @@ body {
         background: url('img/search.png') no-repeat scroll 5% 50% rgb(68, 85, 102);
         float: right;
         color: aliceblue;
-    }
+}
 
 .header-bottom {
     height: 100px;
@@ -133,6 +133,10 @@ body {
     color: aliceblue;
     font-size: 20px;
     font-weight: bold;
+}
+
+#btn-add-event {
+    width: 200px;
 }
 
 .button a {
@@ -442,8 +446,6 @@ body {
 .dl-horizontal dt {
     font-size: 15px;
     font-weight: bold;
-    display: inline-block;
-    margin-bottom: 10px;
 }
 
 .dl-horizontal dt span {
