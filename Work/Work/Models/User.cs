@@ -9,16 +9,23 @@ namespace Work.Models
     {
 
         public int Id { get; set; }
+        //[Display(Name = "Имя")]
         public string Name { get; set; }
+        //[Display(Name = "Фамилия")]
         public string Surname { get; set; }
+        //[Display(Name = "Пол")]
         public string Gender { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Дата рождения")]
         public DateTime Birthday { get; set; }
+        //[Display(Name = "Телефон")]
         public string Telephone { get; set; }
+        //[Display(Name = "Почта")]
         public string Email { get; set; }
+        //[Display(Name = "Комментарий")]
         public string AboutMe { get; set; }
+        //[Display(Name = "Спортсмен")]
         public bool IsSportsman { get; set; }
         public List<EventUser> Events { get; set; }
         [Required]
