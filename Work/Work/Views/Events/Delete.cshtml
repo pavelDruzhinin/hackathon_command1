@@ -10,41 +10,23 @@
     <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.Name) : <span>@Html.DisplayFor(model => model.Name)</span>
             </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.Category)
+                @Html.DisplayNameFor(model => model.Category) : <span>@Html.DisplayFor(model => model.Category)</span>
             </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Category)
-            </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.DateStart)
+                @Html.DisplayNameFor(model => model.DateStart) : <span>@Html.DisplayFor(model => model.DateStart)</span>
             </dt>
-            <dd>
-                @Html.DisplayFor(model => model.DateStart)
-            </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.DateFinish)
+                @Html.DisplayNameFor(model => model.DateFinish) : <span>@Html.DisplayFor(model => model.DateFinish)</span>
             </dt>
-            <dd>
-                @Html.DisplayFor(model => model.DateFinish)
-            </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.Location)
+                @Html.DisplayNameFor(model => model.Location) : <span>@Html.DisplayFor(model => model.Location)</span>
             </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Location)
-            </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.CountUsers)
+                @Html.DisplayNameFor(model => model.CountUsers) : <span>@Html.DisplayFor(model => model.CountUsers)</span>
             </dt>
-            <dd>
-                @Html.DisplayFor(model => model.CountUsers)
-            </dd>
         </dl>
         @using (Html.BeginForm())
         {
