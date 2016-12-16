@@ -7,9 +7,13 @@
 
 <div class="account-login">
     <span>Пользователи</span>
-    <hr />
-    <button onClick='location.href="Users/Create"' id="btn-add-event">Добавить пользователя</button>
-    
+    <hr />    
+        @{
+            if (User.IsInRole("admin"))
+            {
+                <button onClick='location.href="Create"' id="btn-add-event">Добавить пользователя</button>
+            }
+        }
         <table class="simple-little-table">
             <tr>
                 <th>
