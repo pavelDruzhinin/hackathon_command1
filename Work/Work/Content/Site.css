@@ -224,6 +224,16 @@ body {
     font-weight: bold;
 }
 
+.account-login a {
+    text-decoration: none;
+    color: #294F59;
+}
+
+.user-create a {
+    text-decoration: none;
+    color: #294F59;
+}
+
 .user-create {
     border: 1px solid aliceblue;
     color: #294F59;
