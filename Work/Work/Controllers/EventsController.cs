@@ -12,7 +12,11 @@ using Work.Models;
 namespace Work.Controllers
 {
     public class EventsController : Controller
+         
+       
     {
+    
+
         private DBContext db = new DBContext();
         private string searchString;
 
@@ -70,6 +74,7 @@ namespace Work.Controllers
        // [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
+           
             return View();
         }
 
@@ -97,6 +102,7 @@ namespace Work.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
