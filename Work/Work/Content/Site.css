@@ -331,9 +331,10 @@ body {
 }
 
 .simple-little-table {
-	font-family:Arial, Helvetica, sans-serif;
-	color:#666;
-	font-size:12px;
+	width: 100%;
+    word-wrap: break-word;
+    table-layout: fixed;
+	font-size:13px;
 	text-shadow: 1px 1px 0px #fff;
 	background:#eaebec;
 	margin:20px;
