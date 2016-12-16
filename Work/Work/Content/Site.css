@@ -440,11 +440,13 @@ body {
 }
 
 .dl-horizontal dt {
+    font-size: 15px;
     font-weight: bold;
     display: inline-block;
     margin-bottom: 10px;
 }
 
-.dl-horizontal span {
+.dl-horizontal dt span {
+    font-size: 15px;
     font-weight: normal;
 }
