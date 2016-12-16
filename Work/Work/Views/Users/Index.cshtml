@@ -12,10 +12,10 @@
     {
         <form>
             Поиск по имени: @Html.TextBox("SearchString") &nbsp;
-            <input type="submit" value="Search" />
+            <button type="submit">Искать</button>
         </form>
     }
-    <table class="table">
+    <table class="simple-little-table">
         <tr>
             <th>
                 @Html.ActionLink("Имя", "Index", new { sortOrder = ViewBag.NameSortParm })
