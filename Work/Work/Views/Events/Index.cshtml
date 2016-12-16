@@ -8,23 +8,17 @@
 <div class="user-create">
     <span>Мероприятия</span>
     <hr />
-    @using (Html.BeginForm())
-    {
-        <p>
-            Поиск по имени: @Html.TextBox("SearchString") &nbsp;
-            <button type="submit">Искать</button>
-        </p>
-    }
+   
     <table class="simple-little-table">
         <tr>
             <th>
-                @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+                @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
-            <th>
-                @Html.ActionLink("DateStart", "Index", new { sortOrder = ViewBag.DateSortParm })
+            <th>                
+                @Html.DisplayNameFor(model => model.DateStart)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DateFinish)
