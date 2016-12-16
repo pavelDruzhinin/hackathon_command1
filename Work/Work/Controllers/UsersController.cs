@@ -68,7 +68,7 @@ namespace Work.Controllers
         }
 
         // GET: Users/Create
-        [Authorize(Roles = "admin")]
+       // [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
@@ -79,7 +79,7 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult Create([Bind(Exclude ="RoleId")] User user)
         {
             
