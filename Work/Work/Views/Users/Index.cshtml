@@ -8,68 +8,69 @@
 <div class="account-login">
     <span>Пользователи</span>
     <hr />
-   
-    <table class="simple-little-table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Surname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-               @Html.DisplayNameFor(model => model.Birthday)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telephone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AboutMe)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsSportsman)
-            </th>
-        </tr>
-        @foreach (var item in Model)
-        {
+    <button onClick='location.href="Users/Create"' id="btn-add-event">Добавить пользователя</button>
+    
+        <table class="simple-little-table">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Surname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Birthday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Telephone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AboutMe)
-                </td>
-                <td>
-                    <div class="checkbox">
-                    @Html.DisplayFor(modelItem => item.IsSportsman)
-                    </div>
-                </td>
-                <td>
-                    @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Surname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Birthday)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telephone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AboutMe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsSportsman)
+                </th>
             </tr>
-        }
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Birthday)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telephone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AboutMe)
+                    </td>
+                    <td>
+                        <div class="checkbox">
+                            @Html.DisplayFor(modelItem => item.IsSportsman)
+                        </div>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </table>
 </div>
