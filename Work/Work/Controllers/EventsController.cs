@@ -14,7 +14,7 @@ namespace Work.Controllers
     public class EventsController : Controller
     {
         private DBContext db = new DBContext();
-        private string searchString;
+        //private string searchString;
 
         // GET: Events
         [Authorize]
@@ -25,6 +25,7 @@ namespace Work.Controllers
             ViewBag.DateSortParm = sortOrder == "Date" ? "Date desc" : "Date";
             var events = from s in db.Events
                            select s;
+            string searchString = null;
             if (!string.IsNullOrEmpty(searchString))
             {
                 events = events.Where(e => e.Name.ToUpper().Contains(searchString.ToUpper())
