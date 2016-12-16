@@ -12,9 +12,13 @@ namespace Work.Models
        [Display(Name = "Категория")]
         public string Category { get; set; } //Категория сложности. можно просто выпадающий список в представлении (там 6 категорий всего)
         public List<EventUser> EventUsers { get; set; }
-       [Display(Name = "Старт")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd'.'MM'.'yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Старт")]
         public DateTime? DateStart { get; set; }
-       [Display(Name = "Финиш")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd'.'MM'.'yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Финиш")]
         public DateTime? DateFinish { get; set; }
        [Display(Name = "Место")]
         public string Location { get; set; } //место проведения
