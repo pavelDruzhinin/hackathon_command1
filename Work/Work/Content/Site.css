@@ -422,17 +422,28 @@ body {
 	font-weight: bold;
 	text-decoration:none;
 }
+
 .simple-little-table a:visited {
 	color: #999999;
 	font-weight:bold;
 	text-decoration:none;
 }
+
 .simple-little-table a:active,
 .simple-little-table a:hover {
 	color: #bd5a35;
 	text-decoration:underline;
 }
 
-.simple-little-table #check-box {
+.simple-little-table td .checkbox {
     width: 20px;
+}
+
+.dl-horizontal dt {
+    font-weight: bold;
+}
+
+.dl-horizontal dd {
+    display: inline-block;
+    margin-bottom: 10px;
 }

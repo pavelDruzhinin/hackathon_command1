@@ -60,8 +60,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.AboutMe)
                 </td>
-                <td id="check-box">
+                <td>
+                    <div class="checkbox">
                     @Html.DisplayFor(modelItem => item.IsSportsman)
+                    </div>
                 </td>
                 <td>
                     @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
