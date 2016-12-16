@@ -9,16 +9,16 @@ namespace Work.Models
         public int Id { get; set; }
        [Display(Name = "Название")]
         public string Name { get; set; }
-       // [Display(Name = "Категория")]
+       [Display(Name = "Категория")]
         public string Category { get; set; } //Категория сложности. можно просто выпадающий список в представлении (там 6 категорий всего)
         public List<EventUser> EventUsers { get; set; }
-       // [Display(Name = "Старт")]
+       [Display(Name = "Старт")]
         public DateTime? DateStart { get; set; }
-       // [Display(Name = "Финиш")]
+       [Display(Name = "Финиш")]
         public DateTime? DateFinish { get; set; }
-       // [Display(Name = "Место")]
+       [Display(Name = "Место")]
         public string Location { get; set; } //место проведения
-        //[Display(Name = "Участников")]
+       [Display(Name = "Участников")]
         public int? CountUsers { get; set; }
     }
 }
