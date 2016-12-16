@@ -85,14 +85,12 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button type="submit">Сохранить</button>
+                    <button type="submit">Сохранить</button> |
+                    @Html.ActionLink("Вернуться к списку", "Index")
                 </div>
             </div>
         </div>
     }
-    <div>
-        @Html.ActionLink("Вернуться к списку", "Index")
-    </div>
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
         <link href='@Url.Content("~/Content/themes/base/all.css")' rel="stylesheet" type="text/css" />
