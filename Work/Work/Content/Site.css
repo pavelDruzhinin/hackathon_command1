@@ -1,24 +1,331 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿* {
+    box-sizing: border-box;
+    font-family: Aquarion;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+body {
+    padding: 0;
+    margin: 0;
+    background: #73c5dd; /* Old browsers */
+    background: -moz-linear-gradient(top, #73c5dd 0%, #fcfcfc 50%, #73c5dd 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #73c5dd 0%,#fcfcfc 50%,#73c5dd 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #73c5dd 0%,#fcfcfc 50%,#73c5dd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73c5dd', endColorstr='#73c5dd',GradientType=0 ); /* IE6-9 */
+    color: aliceblue;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.header {
+    height: 150px;
+    background-color: #294F59;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.header-top-container {
+    background: #023544;
+}
+
+.header-top {
+    height: 50px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header-top-contact {
+    height: 100%;
+    width: 50%;
+    float: left;
+    padding: 5px;
+}
+
+.header-top-search {
+    height: 100%;
+    width: 50%;
+    float: left;
+    padding: 9px 5px 8px 8px;
+}
+
+.header-top-search input {
+        padding: 5px 2px 5px 35px;
+        background: url('img/search.png') no-repeat scroll 5% 50% rgb(68, 85, 102);
+        float: right;
+        color: aliceblue;
+    }
+
+.header-bottom {
+    height: 100px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header-bottom-logo {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.header-bottom-logo-img {
+    height: 100%;
+    width: 100px;
+    float: left;
+    background-image: url('img/use_icon_7.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.header-bottom-logo-name {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Fira Sans Heavy;
+    color: #D5FFFF;
+    padding: 50px 0 0 80px;
+    cursor: pointer;
+}
+
+.header-bottom-navigation {
+    float: left;
+    height: 100%;
+    width: 50%;
+}
+
+.header-bottom-navigation-enter {
+    padding: 15px 16px 0 0;
+    height: 44px;
+}
+
+.enter {
+    height: 20px; 
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.enter a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.header-bottom-navigation-enter span {
+    display: inline-block;
+    float: right;
+    font-size: 15px;
+    margin: 2px 3px 0 3px;
+}
+
+.header-bottom-navigation-enter-img {
+    float: right;
+    margin: 1px 0 0 5px;
+    width: 20px;
+    height: 20px;
+    background-image: url('img/logout.png');
+    background-size: cover;
+}
+
+.header-bottom-navigation-button {
+    padding: 2px;
+}
+
+.button {
+    float: right;
+    padding: 15px;
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.button a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.button:hover {
+    background: #e5f9ff;
+    color: #294F59;
+    transition: 0.2s;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover a{
+    color: #294F59;
+}
+
+.content {
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    background: #E5F9FF;
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, .3),
+        -23px 0 20px -23px rgba(0, 0, 0, .8),
+        23px 0 20px -23px rgba(0, 0, 0, .8),
+        0 0 40px rgba(0, 0, 0, .1) inset;
+}
+
+.footer {
+    height: 100px;
+    background: #294F59;
+    padding-top: 27px;
+}
+
+.footer-info {
+    float: left;
+    height: 50px;
+    width: 50%;
+    padding: 0 0 0 85px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.account-login {
+    border: 1px solid aliceblue;
+    color: #294F59;
+    padding: 40px;
+    height: 100vh;
+}
+
+.account-login input {
+    padding: 5px;
+    width: 200px;
+}
+
+.account-login label {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.account-login label:nth-child(1) {
+    margin-top: 3px;
+}
+
+.account-login button {
+    width: 100px;
+    height: 30px;
+    background: #294F59;
+    color: aliceblue;
+    margin-top: 15px;
+    border: 1px solid #023544;
+}
+
+.account-login button:hover {
+    background: #023544;
+    border: 1px solid #294F59;
+    transition: 0.2s;
+}
+
+.account-login span {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.user-create {
+    border: 1px solid aliceblue;
+    color: #294F59;
+    padding: 40px;
+    height: 100vh;
+}
+
+.user-create span {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.user-create input {
+    padding: 5px;
+    width: 200px;
+}
+
+.user-create .check-box {
+    width: 20px;
+}
+
+.user-create label {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.user-create button {
+    width: 150px;
+    height: 30px;
+    background: #294F59;
+    color: aliceblue;
+    margin-top: 10px;
+    border: 1px solid #023544;
+}
+
+.user-create button:hover {
+    background: #023544;
+    border: 1px solid #294F59;
+    transition: 0.2s;
+}
+
+.home-index {
+    padding: 40px;
+    width: 100%;
+    color: #294F59;
+}
+
+.home-index span {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.news-box {
+    width: 60%;
+    border: 2px outset aliceblue;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+    background: #e3e3ff;
+}
+
+.news-box-img {
+    width: 100%;
+    height: 320px;
+}
+
+#img1 {
+    background-image: url('img/news/1.jpg');
+    background-size: cover;
+}
+
+#img2 {
+    background-image: url('img/news/2.jpg');
+    background-size: cover;
+}
+
+#img3 {
+    background-image: url('img/news/3.jpg');
+    background-size: cover;
+}
+
+.news-box-link {
+    padding: 10px 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.news-box-info {
+    padding: 0 0 10px 0;
+}
+
+.news-box-date {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #cfd6e8;
+}
+
+.news-box-date span {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.news-box-date span:nth-child(1) {
+    float: right;
 }

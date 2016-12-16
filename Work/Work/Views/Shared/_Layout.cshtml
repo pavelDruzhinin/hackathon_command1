@@ -1,66 +1,87 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title – приложение ASP.NET</title>
-    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="~/fonts/aqua/aquarion.css">
+    <link rel="stylesheet" href='~/fonts/firasans/firasansheavy.css'>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/Site.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class='header'>
+        <div class='header-top-container'>
+            <div class='header-top'>
+                <div class='header-top-contact'>
+                    <span>Telephone: 8(999)999-99-99</span><br>
+                    <span>E-mail: boxname@mail.com</span>
+                </div>
+                <div class='header-top-search'>
+                    <input name="header-search" size="30" type="text">
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                    <li>@{
-
-
-                            if (User.Identity.IsAuthenticated) {
-                            @Html.ActionLink("Пользователи", "Index", "Users");
-                        }
-                    }</li>
-                    <li>@Html.ActionLink("Мероприятия", "Index", "Events")</li>
+        </div>
+        <div class='header-bottom'>
+            <div class='header-bottom-logo' onclick="location.href='/'">
+                <div class='header-bottom-logo-img'></div>
+                <div class='header-bottom-logo-name'>SPORTTOURISM.RU</div>
+            </div>
+            <div class='header-bottom-navigation'>
+                <div class='header-bottom-navigation-enter'>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Профиль", "EditProfile", "Users")</li>
-                    }
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                       
                         using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm" }))
                         {
                             @Html.AntiForgeryToken()
                         }
-                        <li>
-                            <a href="javascript:document.getElementById('logoutForm').submit()"><span style="padding-right:25px;color:darkgoldenrod">@User.Identity.Name.ToString()</span>Выйти</a>
-                        </li>
+                        <div class="enter">
+                            <a href="javascript:document.getElementById('logoutForm').submit()"><span>@User.Identity.Name.ToString()</span>Выйти</a>
+                        </div>
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Вход", "Login", "Account")</li>
-                        <li>@Html.ActionLink("Регистрация", "Create", "Users")</li>
+                        <div class='header-bottom-navigation-enter-img'></div>
+                        <div class="enter">@Html.ActionLink("Регистрация", "Create", "Users")</div>
+                        <span>или</span>
+                        <div class="enter">@Html.ActionLink("Вход", "Login", "Account")</div>
                     }
+                </div>
+                <div class='header-bottom-navigation-button'>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class='button'>
+                            @Html.ActionLink("Профиль", "EditProfile", "Users")
+                        </div>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class='button'>
+                            @Html.ActionLink("Пользователи", "Index", "Users")
+                        </div>
+                    }
+                    <div class='button'>
+                        @Html.ActionLink("Мероприятия", "Index", "Events")
+                    </div>
+                    <div class='button'>
+                        @Html.ActionLink("Главная", "Index", "Home")
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+
+    <div class="content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
-        </footer>
+        @RenderSection("News", false)
+    </div>
+
+    <div class='footer'>
+        <div class='footer-info'>
+            <span>Welcome!</span><br>
+            <span>Site created 12.2016</span><br>
+            <span>Goodbye!</span>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

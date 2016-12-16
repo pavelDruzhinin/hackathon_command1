@@ -1,21 +1,22 @@
 ﻿@model Work.Models.LoginViewModel
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Вход";
 }
-
-<h2>Login</h2>
-
-<form action="/Account/Login" method="post">
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-    <div class="form-group">
-        <label for="Login">На удивление Логин</label>
-        <input type="text" class="form-control" id="Login" name="Login"/>
-     </div>
-    <div class="form-group">
-        <label for="Password">Вводи пароль, дарагой!</label>
-        <input type="password" class="form-control" id="Password" name="password" />
-    </div>
-    <button type="submit" class="btn btn-default">Войти</button>
-</form>
+<div class="account-login">
+    <span>Вход</span>
+    <hr />
+    <form action="/Account/Login" method="post">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <div class="form-group">
+            <label for="Login">Логин:</label><br />
+            <input type="text" class="form-control" id="Login" name="Login" />
+        </div>
+        <div class="form-group">
+            <label for="Password">Пароль:</label><br />
+            <input type="password" class="form-control" id="Password" name="password" />
+        </div>
+        <button type="submit" class="btn btn-default">Войти</button>
+    </form>
+</div> 
         

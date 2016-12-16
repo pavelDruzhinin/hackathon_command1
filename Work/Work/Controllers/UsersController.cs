@@ -15,7 +15,7 @@ namespace Work.Controllers
     public class UsersController : Controller
     {
         private DBContext db = new DBContext();
-        //private string searchString;
+        private string searchString;
 
         // GET: Users
         // [Authorize(Roles = "admin")]
@@ -26,8 +26,7 @@ namespace Work.Controllers
             ViewBag.DateSortParm = sortOrder == "Date" ? "Date desc" : "Date";
             var users = from s in db.Users
                            select s;
-
-            string searchString = null;
+            
             if (!string.IsNullOrEmpty(searchString))
             {
                 users = users.Where(u => u.Name.ToUpper().Contains(searchString.ToUpper())

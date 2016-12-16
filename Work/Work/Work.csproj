@@ -264,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\" />
+    <Folder Include="fonts\aqua\" />
+    <Folder Include="fonts\firasans\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
