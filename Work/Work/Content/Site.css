@@ -432,3 +432,7 @@ body {
 	color: #bd5a35;
 	text-decoration:underline;
 }
+
+.simple-little-table #check-box {
+    width: 20px;
+}
