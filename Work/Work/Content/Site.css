@@ -1,6 +1,6 @@
 ﻿* {
     box-sizing: border-box;
-    font-family: Aquarion;
+    font-family: 'Aquarion';
 }
 
 body {
@@ -76,9 +76,9 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: bold;
-    font-family: Fira Sans Heavy;
+    font-family: 'Fira Sans Heavy';
     color: #D5FFFF;
     padding: 50px 0 0 80px;
     cursor: pointer;
@@ -92,7 +92,7 @@ body {
 
 .header-bottom-navigation-enter {
     padding: 15px 16px 0 0;
-    height: 44px;
+    height: 42px;
 }
 
 .enter {
@@ -222,6 +222,16 @@ body {
     display: inline-block;
     font-size: 25px;
     font-weight: bold;
+}
+
+.account-login a {
+    text-decoration: none;
+    color: #294F59;
+}
+
+.user-create a {
+    text-decoration: none;
+    color: #294F59;
 }
 
 .user-create {
@@ -451,4 +461,15 @@ body {
 .dl-horizontal dt span {
     font-size: 15px;
     font-weight: normal;
+}
+
+.footer-socbutton {
+    float: left;
+    height: 50px;
+    width: 50%;
+    padding: 7px 85px 0 0;
+}
+
+.pluso {
+    float: right;
 }
