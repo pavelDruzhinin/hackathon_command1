@@ -18,7 +18,7 @@ namespace Work.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd'.'MM'.'yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Дата рождения")]
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         [Display(Name = "Телефон")]
         public string Telephone { get; set; }
         [Display(Name = "Почта")]
