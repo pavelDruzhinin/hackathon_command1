@@ -190,6 +190,11 @@ namespace Work.Controllers
 
         }
 
+        public ActionResult ViewUser(int? id)
+        {
+            var ListUsers = db.EventsUsers.Include(x => x.EventId == id).Select(x => x.UserId);
+            return View(ListUsers);
+        }
 
         protected override void Dispose(bool disposing)
         {

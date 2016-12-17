@@ -1,0 +1,27 @@
+﻿@model Work.Models.Event
+@{
+    ViewBag.Title = "ViewUsers";
+}
+
+<h2>ViewUsers</h2>
+@Html.ValidationSummary()
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Дата рождения</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var EventUsers in Model.EventUsers)
+        {
+            <tr>
+                <td>@EventUsers.User.Name</td>
+                <td>@EventUsers.User.Surname</td>
+                <td>@EventUsers.User.Birthday</td>
+            </tr>
+
+        }
+</tbody>
+    </table>
