@@ -164,6 +164,33 @@ namespace Work.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
+        public ActionResult AddToEvent(int? id)
+        {
+            var events = db.Events.FirstOrDefault(x => x.Id == id);
+            User users = db.Users.FirstOrDefault(x => x.Login == User.Identity.Name);
+            var currentEU = db.EventsUsers.Where(x => x.Event.Id == id).FirstOrDefault(x => x.User.Login == User.Identity.Name);
+            if (currentEU == null)
+            {
+                currentEU = new EventUser
+                {
+                    Event = events,
+                    User = users
+                };
+
+                db.EventsUsers.Add(currentEU);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+
+            else
+            {
+                return RedirectToAction("Index");
+            }
+
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

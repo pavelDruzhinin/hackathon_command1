@@ -16,7 +16,7 @@ namespace Work.Models
         [Display(Name = "Пол")]
         public string Gender { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd'.'MM'.'yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Дата рождения")]
         public DateTime? Birthday { get; set; }
         [Display(Name = "Телефон")]

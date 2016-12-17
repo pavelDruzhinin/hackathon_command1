@@ -18,7 +18,7 @@ namespace Work.Controllers
        
 
         // GET: Users
-        // [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin")]
         [Authorize]
         public ActionResult Index(string sortOrder)
         {
@@ -98,7 +98,7 @@ namespace Work.Controllers
         }
 
         // GET: Users/Edit/5
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -114,7 +114,7 @@ namespace Work.Controllers
             return View(user);
         }
         
-        public ActionResult EditProfile()
+        public ActionResult EditProfile(int? id )
         {
             if (!User.Identity.IsAuthenticated)
             {
@@ -127,9 +127,23 @@ namespace Work.Controllers
             {
                 return HttpNotFound();
             }
-            return RedirectToAction($"Edit/{user.Id}");
-            
+
+           return RedirectToAction($"Edit/{user.Id}");
+           // return View(user);
+
         }
+
+
+        //public ActionResult Confirm_Profile(User @user)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(@user).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //    return View(@user);
+        //}
 
 
         // POST: Users/Edit/5
@@ -137,7 +151,7 @@ namespace Work.Controllers
         // сведения см. в статье http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public ActionResult Edit( User @user)
         {
             if (ModelState.IsValid)
