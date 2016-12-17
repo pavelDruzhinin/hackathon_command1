@@ -25,4 +25,6 @@ namespace Work.Models
        [Display(Name = "Участников")]
         public int? CountUsers { get; set; }
     }
-}
+
+    
+    }
